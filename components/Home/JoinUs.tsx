@@ -1,0 +1,24 @@
+import React from "react";
+import Image from "next/image";
+import { ImageVideo } from "@/assets/Home";
+
+const Joinus = () => {
+  return (
+    <div className="flex flex-col items-center justiyf-center space-y-5 py-20">
+      <p className="font-medium text-[14px] leading-[20px] md:tracking-[-0.4px]">
+        Join us building the Best Brand
+      </p>
+      <h1 className="font-medium md:text-[86px] text-[43px] md:leading-[83px] leading-[42px]  max-w-3xl mx-auto text-center">
+        The easiest way to build a stunning personal site.
+      </h1>
+      <p className="font-medium text-[14px] leading-[20px] md:tracking-[-0.4px] max-w-md mx-auto text-center">
+        No complicated tools, no hidden fees—just a fast, free way to create a
+        stunning site in minutes. Professionals love it, and you will too.
+      </p>
+
+      <Image src={ImageVideo} alt="Join us" className="w-full max-w-4xl mt-10" />
+    </div>
+  );
+};
+
+export default Joinus;

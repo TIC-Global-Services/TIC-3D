@@ -1,12 +1,15 @@
-import MainScene from "@/components/Home/MainScene";
-import Scene from "@/components/Home/Scene";
-import WaterScene from "@/components/Reusbale/Water";
+import HeroVideo from "@/components/Home/Hero";
+import ImageChange from "@/components/Home/ImageChange";
+import Joinus from "@/components/Home/JoinUs";
+import Testimonials from "@/components/Home/Testimonials";
 
 export default function Home() {
   return (
     <div className="">
-{/* <Scene /> */}
-<MainScene />
+      <HeroVideo />
+      <ImageChange />
+      <Joinus />
+      <Testimonials />
     </div>
   );
 }
