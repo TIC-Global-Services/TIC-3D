@@ -1,6 +1,6 @@
 import { Client1, Client2, Client3, Client4, Client5, Client6, Client7, Client8 } from '@/assets/Home'
 import React from 'react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 const Testimonials = () => {
     const TestimonialContents = [
@@ -54,7 +54,7 @@ const Testimonials = () => {
         },
     ]
 
-    const TestimonialCard = ({ image, name, username, review }: { image: string, name: string, username: string, review: string }) => {
+    const TestimonialCard = ({ image, name, username, review }: { image: StaticImageData, name: string, username: string, review: string }) => {
         return (
             <div className='flex flex-col space-y-5 p-5 rounded-[10px] bg-[#1A1B1C] mb-2'>
                 <div className='flex items-center space-x-3'>
