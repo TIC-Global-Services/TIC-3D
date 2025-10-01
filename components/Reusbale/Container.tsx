@@ -21,7 +21,7 @@ const Container: React.FC<ContainerProps> = ({
     ? 'w-full md:px-[63px]'
     : isFullScreen
     ? 'w-full'
-    : `xl:px-[33px] lg:px-[25px] md:px-5 mx-auto ${isMobileFullScreen ? 'px-0' : 'px-5'}`;
+    : `xl:px-[35px] lg:px-[25px] md:px-5 mx-auto ${isMobileFullScreen ? 'px-0' : 'px-5'}`;
 
 
   const combinedClasses = `${baseClasses} ${className}`.trim()

@@ -282,7 +282,7 @@ const Navbar = () => {
               <Link
                 key={`nav-${index}`}
                 href={item.link}
-                className="text-white text-base xl:text-lg hover:text-gray-300 transition-colors duration-300 font-normal relative group"
+                className="text-white text-base xl:text-[20px] font-medium hover:text-gray-300 transition-colors duration-300  relative group"
               >
                 {item.name}
               </Link>
@@ -292,7 +292,7 @@ const Navbar = () => {
           {/* CTA Button - Responsive sizing */}
           <Link
             href="/contact"
-            className="bg-transparent text-sm sm:text-base lg:text-lg text-white border border-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full font-medium hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 shadow-lg"
+            className="bg-transparent text-sm sm:text-base lg:text-lg text-white border border-white px-3 sm:px-4 py-1 sm:py-1 rounded-full font-medium hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Let&apos;s talk
           </Link>
