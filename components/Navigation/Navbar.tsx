@@ -294,7 +294,7 @@ const Navbar = () => {
                 alt="The Internet Company Logo"
                 width={200}
                 height={100}
-                className="h-8 sm:h-10 lg:h-19 w-auto"
+                className="h-15 sm:h-19 lg:h-19 w-auto"
                 priority
               />
             </Link>
