@@ -159,11 +159,11 @@ const Hero = () => {
         {/* First Text */}
         <div
           ref={firstTextRef}
-          className="absolute z-20 text-center text-white xl:text-[80px] lg:text-[70px] md:text-[30px] text-[30px] font-medium md:leading-[81px] xl:tracking-[-4px] lg:tracking-[-3px] md:tracking-[-1.5px] tracking-[-1px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute z-20 text-center text-white xl:text-[80px] lg:text-[70px] md:text-[30px] text-[30px] font-medium md:leading-[81px] xl:tracking-[-4px] lg:tracking-[-3px] md:tracking-[-1.5px] tracking-[-1px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full"
           style={{ opacity: 0, visibility: "hidden" }}
         >
           <div>Our Brand Strategy is</div>
-          <div className="mt-2">Stronger</div>
+          <div className="md:mt-2">Stronger</div>
         </div>
 
         {/* Second Text */}

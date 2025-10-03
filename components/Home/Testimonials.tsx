@@ -1,6 +1,7 @@
 import { Client1, Client2, Client3, Client4, Client5, Client6, Client7, Client8 } from '@/assets/Home'
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
+import Container from '../Reusbale/Container'
 
 const Testimonials = () => {
     const TestimonialContents = [
@@ -84,7 +85,8 @@ const Testimonials = () => {
     }
 
     return (
-        <div className="max-w-5xl mx-auto pb-10 overflow-hidden relative">
+        <Container>
+<div className="max-w-5xl mx-auto pb-10 overflow-hidden relative">
             <style dangerouslySetInnerHTML={{
                 __html: `
                     @keyframes infinite-scroll {
@@ -159,6 +161,8 @@ const Testimonials = () => {
                 </div>
             </div>
         </div>
+        </Container>
+        
     )
 }
 

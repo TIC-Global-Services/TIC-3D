@@ -162,7 +162,7 @@ const ImageChange = () => {
   const current = contents[currentIndex];
 
   return (
-    <div ref={containerRef} className="w-full h-screen p-4 bg-white">
+    <div ref={containerRef} className="w-full md:h-screen h-[500px] p-4 bg-white">
       <div className="w-full h-full relative overflow-hidden">
         <img
           src={current.image}
