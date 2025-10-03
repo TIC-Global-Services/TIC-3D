@@ -122,7 +122,7 @@ const Vision = () => {
       </p>
 
       {/* Input + Button */}
-      <div className="flex flex-col items-center justify-center gap-4 w-full max-w-3xl mx-auto mb-12 px-4">
+      <div className="flex md:flex-row flex-col items-center justify-center gap-4 w-full max-w-3xl mx-auto mb-12 px-4">
         {/* Brand Name Input */}
         <input
           type="text"

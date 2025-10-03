@@ -22,10 +22,12 @@ const navItems = [
     link: "https://www.theinternetcompany.one/client.html",
   },
   { name: "Archive", link: "https://www.theinternetcompany.one/archive" },
+   { name: "Branding", link: "/" },
+
 ];
 
 const FnavItems = [
-  { name: "Home", link: "https://www.theinternetcompany.one/" },
+  { name: "Home", link: "https://www.theinternetcompany.one" },
   { name: "About", link: "https://www.theinternetcompany.one/about" },
   {
     name: "Design House",
@@ -37,6 +39,8 @@ const FnavItems = [
   },
   { name: "Archive", link: "https://www.theinternetcompany.one/archive" },
   { name: "Contact", link: "https://www.theinternetcompany.one/contact" },
+  { name: "Branding", link: "/" },
+
 ];
 const Navbar = () => {
   // References for DOM elements
@@ -281,28 +285,28 @@ const Navbar = () => {
         ref={navbarRef}
         className="fixed top-0 left-0 right-0 z-40 bg-transparent"
       >
-        <Container className="flex items-center justify-between py-4 sm:py-6 lg:py-7">
+        <Container className="flex items-center justify-between py-4 sm:py-6 lg:py-3">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
+            <Link href="https://www.theinternetcompany.one">
               <Image
                 src="https://ik.imagekit.io/99y1fc9mh/TIC_Globe/images/newLogo.png?updatedAt=1751867093209"
                 alt="The Internet Company Logo"
                 width={200}
                 height={100}
-                className="h-8 sm:h-10 lg:h-17 w-auto"
+                className="h-8 sm:h-10 lg:h-19 w-auto"
                 priority
               />
             </Link>
           </div>
 
           {/* Desktop Navigation Links - Hidden on mobile */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
             {navItems.map((item, index) => (
               <Link
                 key={`nav-${index}`}
                 href={item.link}
-                className="text-white text-base xl:text-[20px] font-medium hover:text-gray-300 transition-colors duration-300  relative group"
+                className="text-white text-base xl:text-[19px] font-medium hover:text-gray-300 transition-colors duration-300  relative group"
               >
                 {item.name}
               </Link>
