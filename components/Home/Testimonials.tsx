@@ -60,11 +60,11 @@ const Testimonials = () => {
                 <div className='flex items-center space-x-3'>
                     <Image src={image} alt={name} width={500} height={500} className='w-12 h-12 rounded-full object-cover' />
                     <div className='flex flex-col'>
-                        <span className='font-medium text-[16px] leading-[24px] tracking-[-0.4px]'>{name}</span>
+                        <span className='font-medium text-[16px] leading-[24px] tracking-[-0.4px] text-white'>{name}</span>
                         <span className='font-normal text-[14px] leading-[20px] tracking-[-0.4px] text-gray-500'>{username}</span>
                     </div>
                 </div>
-                <p className='font-normal text-[14px] leading-[20px] tracking-[-0.4px]'>{review}</p>
+                <p className='font-normal text-[14px] leading-[20px] tracking-[-0.4px] text-white'>{review}</p>
             </div>
         )
     }
