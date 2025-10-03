@@ -13,7 +13,7 @@ const Hero = () => {
   const firstTextRef = useRef<HTMLDivElement | null>(null);
   const secondTextRef = useRef<HTMLDivElement | null>(null);
 
-  const totalFrames = 320;
+  const totalFrames = 250;
   const currentFrame = (index: number) =>
     `/castle/${(index + 1).toString()}.avif`;
 
@@ -174,7 +174,65 @@ const Hero = () => {
         >
           <div className="text-line-2 text-white">Stronger than ever</div>
         </div>
+
+        {/* Keep Scrolling Text */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white text-sm md:text-base font-light tracking-wider ">
+          <div className="flex flex-row gap-2 sm:gap-3 md:gap-4 items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 md:py-3">
+            {/* Animated Dot */}
+            <div className="flex items-center justify-center">
+              <div className="dot-animation bg-white/50" />
+            </div>
+
+            {/* Static Text */}
+            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-white/50 whitespace-nowrap leading-none">
+              Keep scrolling
+            </span>
+          </div>
+        </div>
       </div>
+      <style jsx>{`
+  .dot-animation {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: pulseCircle 1.5s infinite ease-in-out;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 640px) {
+    .dot-animation { width: 8px; height: 8px; }
+  }
+
+  @media (min-width: 768px) {
+    .dot-animation { width: 10px; height: 10px; }
+  }
+
+  @media (min-width: 1024px) {
+    .dot-animation { width: 12px; height: 12px; }
+  }
+
+  @keyframes pulseCircle {
+    0%   { opacity: 0.3; transform: scale(0.8) translateX(0); }
+    50%  { opacity: 1;   transform: scale(1.2) translateX(2px); }
+    100% { opacity: 0.3; transform: scale(0.8) translateX(0); }
+  }
+
+  @media (min-width: 640px) {
+    @keyframes pulseCircle {
+      0%   { opacity: 0.3; transform: scale(0.8) translateX(0); }
+      50%  { opacity: 1;   transform: scale(1.2) translateX(3px); }
+      100% { opacity: 0.3; transform: scale(0.8) translateX(0); }
+    }
+  }
+
+  @media (min-width: 768px) {
+    @keyframes pulseCircle {
+      0%   { opacity: 0.3; transform: scale(0.8) translateX(0); }
+      50%  { opacity: 1;   transform: scale(1.2) translateX(4px); }
+      100% { opacity: 0.3; transform: scale(0.8) translateX(0); }
+    }
+  }
+`}</style>
     </section>
   );
 };

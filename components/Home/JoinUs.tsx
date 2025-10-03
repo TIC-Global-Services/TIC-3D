@@ -13,7 +13,7 @@ const Joinus = () => {
        and leave a lasting impression.
       </p>
 
-      <Image src={ImageVideo} alt="Join us" className="w-full max-w-4xl mt-10" />
+      <Image src={ImageVideo} alt="Join us" className="w-full max-w-4xl mt-10 rounded-xl" />
     </div>
   );
 };

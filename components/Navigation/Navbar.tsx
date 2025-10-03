@@ -12,12 +12,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Navigation items - easy to modify
 const navItems = [
-  { name: "About", link: "/about-us" },
-  { name: "Design House", link: "/design" },
-  { name: "Client Portal", link: "/client" },
-  { name: "Archive", link: "/archive" },
+  { name: "About", link: "https://www.theinternetcompany.one/about" },
+  {
+    name: "Design House",
+    link: "https://www.theinternetcompany.one/about.html",
+  },
+  {
+    name: "Client Portal",
+    link: "https://www.theinternetcompany.one/client.html",
+  },
+  { name: "Archive", link: "https://www.theinternetcompany.one/archive" },
 ];
 
+const FnavItems = [
+  { name: "Home", link: "https://www.theinternetcompany.one/" },
+  { name: "About", link: "https://www.theinternetcompany.one/about" },
+  {
+    name: "Design House",
+    link: "https://www.theinternetcompany.one/about.html",
+  },
+  {
+    name: "Client Portal",
+    link: "https://www.theinternetcompany.one/client.html",
+  },
+  { name: "Archive", link: "https://www.theinternetcompany.one/archive" },
+  { name: "Contact", link: "https://www.theinternetcompany.one/contact" },
+];
 const Navbar = () => {
   // References for DOM elements
   const navbarRef = useRef(null);
@@ -266,11 +286,11 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/TICLogo.png"
+                src="https://ik.imagekit.io/99y1fc9mh/TIC_Globe/images/newLogo.png?updatedAt=1751867093209"
                 alt="The Internet Company Logo"
                 width={200}
                 height={100}
-                className="h-8 sm:h-10 lg:h-12 w-auto"
+                className="h-8 sm:h-10 lg:h-17 w-auto"
                 priority
               />
             </Link>
@@ -291,7 +311,7 @@ const Navbar = () => {
 
           {/* CTA Button - Responsive sizing */}
           <Link
-            href="/contact"
+            href="https://www.theinternetcompany.one/contact"
             className="bg-transparent text-sm sm:text-base lg:text-lg text-white border border-white px-3 sm:px-4 py-1 sm:py-1 rounded-full font-medium hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Let&apos;s talk
@@ -305,7 +325,8 @@ const Navbar = () => {
         onClick={toggleMenu}
         onMouseEnter={handleHoverEnter}
         onMouseLeave={handleHoverLeave}
-        className="fixed top-4 right-4 sm:top-5 sm:right-5 lg:top-6 lg:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white hover:bg-black cursor-pointer rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl group"
+        className="fixed top-4 right-4 sm:top-5 sm:right-5 lg:top-7 lg:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 lg:w-17 lg:h-17 bg-white cursor-pointer rounded-full flex items-center justify-center shadow-md transition-all duration-300 group
+  lg:hover:bg-black lg:hover:scale-105 lg:hover:shadow-lg"
         style={{ opacity: 0 }}
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
       >
@@ -313,7 +334,7 @@ const Navbar = () => {
           ref={plusIconRef}
           className="transition-transform duration-300 ease-out"
         >
-          <HiPlus className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-black group-hover:text-white transition-colors duration-300" />
+          <HiPlus className="w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10 text-black group-hover:text-white transition-colors duration-300" />
         </div>
       </button>
 
@@ -321,91 +342,120 @@ const Navbar = () => {
       <div
         ref={overlayRef}
         className="fixed inset-0 bg-black z-45"
-        style={{ visibility: "hidden" }}
         role="dialog"
         aria-modal="true"
         aria-labelledby="menu-title"
       >
-        <div className="h-full w-full flex flex-col">
-          {/* Header with Logo */}
-          <div className="flex justify-start items-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="md:h-full h-1/2 w-full flex md:flex-row flex-col items-start justify-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-48">
+          {/* Logo - Centered */}
+          <div className="flex-1 flex items-start justify-start">
             <div ref={overlayLogoRef} className="flex-shrink-0">
-              <Link href="/" onClick={handleLinkClick}>
-                <Image
-                  src="/TICLogo.png"
+              <a href="/" onClick={handleLinkClick}>
+                <img
+                  src="https://ik.imagekit.io/99y1fc9mh/TIC_Globe/images/newLogo.png?updatedAt=1751867093209"
                   alt="The Internet Company Logo"
-                  width={200}
-                  height={100}
-                  className="h-8 sm:h-10 lg:h-12 w-auto"
+                  className="h-20 sm:h-20 lg:h-30 w-auto"
                 />
-              </Link>
+              </a>
             </div>
           </div>
 
-          {/* Main Content Area - Responsive layout */}
-          <div className="flex-1 flex flex-col lg:flex-row items-start justify-between px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16 pb-8">
-            {/* Navigation Links - Responsive text sizes */}
-            <div ref={menuLinksRef} className="flex-1 w-full lg:w-auto">
+          {/* Right Side: Navigation and Social Links */}
+          <div className="flex flex-row items-start justify-between gap-40">
+            {/* Main Navigation */}
+            <div ref={menuLinksRef}>
               <nav
-                className="space-y-4 sm:space-y-5 lg:space-y-6"
+                className="space-y-2 sm:space-y-3 lg:space-y-4 text-start"
                 id="menu-title"
               >
-                {navItems.map((item, index) => (
-                  <div key={`overlay-nav-${index}`} className="overflow-hidden">
-                    <Link
+                {FnavItems.map((item, index) => (
+                  <div key={`overlay-nav-${index}`} className="relative">
+                    <a
                       href={item.link}
                       onClick={handleLinkClick}
-                      className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white hover:text-gray-400 transition-all duration-300 transform hover:translate-x-2 lg:hover:translate-x-4"
+                      className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium tracking-tight text-white hover:text-gray-400 transition-colors"
                     >
-                      {item.name}
-                    </Link>
+                      {item.name === "Design House" ? (
+                        <span className="block">
+                          Design <span className="block">House</span>
+                        </span>
+                      ) : (
+                        item.name
+                      )}
+                    </a>
+
+                    {item.name === "Client Portal" && (
+                      <span className="absolute -top-1 -right-12 sm:-right-14 lg:-right-16 px-2 sm:px-3 py-1 text-xs hover:bg-[#4A5818] bg-[#c7e55b] text-black rounded">
+                        New
+                      </span>
+                    )}
+
+                    {item.name === "Archive" && (
+                      <span className="absolute -top-1 -right-1 sm:-right-12 lg:right-1 px-2 py-1 text-xs bg-gray-700 text-white rounded">
+                        36
+                      </span>
+                    )}
                   </div>
                 ))}
-                <div className="overflow-hidden pt-2 lg:pt-4">
-                  <Link
-                    href="/contact"
-                    onClick={handleLinkClick}
-                    className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white hover:text-gray-400 transition-all duration-300 transform hover:translate-x-2 lg:hover:translate-x-4"
-                  >
-                    Contact
-                  </Link>
-                </div>
               </nav>
             </div>
 
-            {/* Social Links & Copyright - Responsive positioning */}
-            <div
-              ref={socialLinksRef}
-              className="flex flex-row lg:flex-col items-start lg:items-end justify-between w-full lg:w-auto h-auto lg:h-full pt-8 mt-8 lg:mt-0 border-t lg:border-t-0 border-gray-800"
-            >
-              {/* Social Links */}
-              <div className="flex flex-row lg:flex-col items-start lg:items-end gap-4 lg:gap-6 mb-4 lg:mb-0">
-                {[
-                  { href: "https://instagram.com", label: "Instagram" },
-                  { href: "https://linkedin.com", label: "LinkedIn" },
-                  { href: "https://twitter.com", label: "Twitter" },
-                ].map(({ href, label }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    onClick={handleLinkClick}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base sm:text-lg lg:text-xl text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Copyright */}
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed text-left lg:text-right">
-                © 2024 The Internet Company.
-                <br className="hidden lg:block" />
-                <span className="lg:hidden"> </span>
-                All rights reserved.
-              </p>
+            {/* Social Links */}
+            <div ref={socialLinksRef} className="flex flex-col items-start">
+              {[
+                { href: "https://instagram.com", label: "Instagram" },
+                { href: "https://linkedin.com", label: "LinkedIn" },
+              ].map(({ href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={handleLinkClick}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-base lg:text-3xl tracking-tighter text-white hover:text-[#595959] transition-colors"
+                >
+                  {label}
+                </a>
+              ))}
             </div>
+          </div>
+
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-8 lg:right-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-colors z-50"
+            onClick={() => console.log("Close menu")}
+            aria-label="Close menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* Copyright - Bottom Right */}
+          <div className="absolute bottom-7 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8">
+            <p className="text-xs sm:text-sm text-gray-500 text-right">
+              © Copyright TIC INTERNET COMPANY
+            </p>
+          </div>
+
+          {/* Contact Button - Bottom Left */}
+          <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 lg:bottom-8 lg:left-8">
+            <button
+              onClick={handleLinkClick}
+              className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition-all text-sm sm:text-base"
+            >
+              contact
+            </button>
           </div>
         </div>
       </div>

@@ -137,7 +137,7 @@ const ImageChange = () => {
         />
 
         <div className="absolute top-5 left-5">
-          <h1 className="text-xl font-bold" style={{ color: current.textColor }}>
+          <h1 className="text-sm font-bold opacity-50" style={{ color: current.textColor }}>
             {current.name}
           </h1>
         </div>
@@ -146,7 +146,7 @@ const ImageChange = () => {
           <button
             onClick={toggleMute}
             aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-            className="transition-transform hover:scale-110"
+            className="transition-transform hover:scale-110 cursor-pointer"
           >
             {isMuted ? (
               <VolumeX size={24} style={{ color: current.textColor }} />
