@@ -84,7 +84,7 @@ const Testimonials = () => {
     }
 
     return (
-        <div className="max-w-5xl mx-auto overflow-hidden relative">
+        <div className="max-w-5xl mx-auto pb-10 overflow-hidden relative">
             <style dangerouslySetInnerHTML={{
                 __html: `
                     @keyframes infinite-scroll {
@@ -113,10 +113,10 @@ const Testimonials = () => {
             <div className="absolute top-0 left-0 right-0 h-[110px] bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
             
             {/* Bottom gradient fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute bottom-10 left-0 right-0 h-[110px] bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 h-[800px] overflow-hidden">
-                <div className="flex flex-col">
+                <div className="flex flex-col p">
                     <div className="animate-infinite-scroll flex flex-col">
                         {getColumnTestimonials(0).map((testimonial, index) => (
                             <TestimonialCard
