@@ -53,7 +53,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="min-h-screen w-full text-white overflow-hidden"
+      className="min-h-screen w-full bg-black text-white overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-7 py-8 md:py-15 h-full flex flex-col justify-between">
         {/* Main Content Section */}
